@@ -20,6 +20,21 @@ router.post('/student',async (req, res) => {
         console.log(error);
     }
 })
+
+//for getting StudentInfo
+
+router.get('/student/:id', async(req, res) => {
+    try {
+        const student = await Student.findById(req.params.id);
+        if (!student)
+            res.status(404).send({ error: 'student not found' });
+        res.send(student);
+        
+    } catch (error)
+    {
+        res.status(500).send({ error });
+    }
+})
 // for adding any society
 router.post('/student/society/:id', async (req, res) => {
     try {

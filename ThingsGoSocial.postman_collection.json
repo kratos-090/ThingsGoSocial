@@ -92,6 +92,15 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Student Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
 		}
 	]
 }
