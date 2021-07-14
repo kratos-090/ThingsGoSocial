@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "664f12cd-697a-4824-bf71-4995f4a8b63e",
+		"name": "ThingsGoSocial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Rohit Kumar\",\r\n    \"contact\":8824433482,\r\n      \"subjects\":[\"hindi\",\"english\",\"maths\",\"social science\"],\r\n      \"class\":\"12th\",\r\n    \"societies\":[\"drama\",\"music\",\"dance\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/student",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add society",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"society\":\"travel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/student/society/60ef3c9f418a1d48b095f845",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"student",
+						"society",
+						"60ef3c9f418a1d48b095f845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add subject",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\":\"biology\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/student/subject/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"student",
+						"subject",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "60ef3c9f418a1d48b095f845"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

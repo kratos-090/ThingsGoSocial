@@ -27,11 +27,11 @@ router.post('/student/society/:id', async (req, res) => {
         if (!student)
             res.status(404).send({ error: 'student not found' }); 
         await student.addSociety(req.body.society);
-        console.log(student);
-        res.send();
+        // console.log(student);
+        res.send('society added successfully');
     } catch (error)
     {
-        console.log(error);
+        // console.log(error);
 
         res.status(500).send({ error });
     }
@@ -44,11 +44,9 @@ router.post('/student/subject/:id', async (req, res) => {
         if (!student)
             res.status(404).send({ error: 'student not found' }); 
         await student.addSubject(req.body.subject);
-        console.log(student);
-        res.send();
+        res.send('subject added successfully');
     } catch (error)
     {
-        console.log(error);
         res.status(500).send({ error });
     }
 })
