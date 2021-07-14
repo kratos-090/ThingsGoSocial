@@ -27,6 +27,7 @@ const studentSchema = new Schema({
     }]
 })
 
+// function for adding a subject to the student
 studentSchema.methods.addSubject = async function (subject) {
     const student = this;
     try {
@@ -43,6 +44,7 @@ studentSchema.methods.addSubject = async function (subject) {
         return new Error(error);
     }
 }
+// function for adding a subject to the society
 studentSchema.methods.addSociety = async function (society) {
     const student = this;
     try {
